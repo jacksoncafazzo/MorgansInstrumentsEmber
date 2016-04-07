@@ -7,7 +7,6 @@
   <a {{action 'showCart'}}><i class="material-icons">shopping_cart</i></a>
 
   {{#if session.isAuthenticated}}
-
     <a class='btn' {{action 'signOut'}}>Sign Out</a>
   {{else}}
   {{#link-to 'sign-up' tagName='li'}}

@@ -9,5 +9,10 @@ export default Ember.Route.extend({
   // model() {
   //   console.log("oh hey, i'm the model!");
   // }
-
+  cartIsShowing: false,
+  actions: {
+    showCart() {
+      this.set('cartIsShowing', true);
+    }
+  }
 });

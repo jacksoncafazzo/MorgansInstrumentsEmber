@@ -1,9 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  
-  shoppingCart: Ember.inject.service(),
 
+  shoppingCart: Ember.inject.service(),
   actions: {
     delete(instrument) {
       if (confirm('delete listing?')) {
@@ -12,6 +11,7 @@ export default Ember.Component.extend({
     },
     addToCart(instrument) {
       this.get('shoppingCart').add(instrument);
+      this.set('cartIsShowing', true);
     },
     update(instrument, params) {
       this.sendAction('update', instrument, params);

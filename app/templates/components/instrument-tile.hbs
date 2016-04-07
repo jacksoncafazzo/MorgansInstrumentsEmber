@@ -19,7 +19,7 @@
       View Instrument Details
     {{/link-to}}
   {{/md-card-reveal}}
-  {{/md-card}}
+{{/md-card}}
 
 <ul>
   {{#each instrument.feedbacks as |feedback|}}
@@ -32,7 +32,7 @@
   {{update-instrument instrument=instrument update='update'}}
   <button class="btn" {{action 'delete' instrument}}>Delete</button>
   {{new-feedback instrument=instrument saveFeedback="saveFeedback"}}
-<button class='btn' {{action 'addToCart' instrument}}>Add to Cart</button>
+  <button class='btn' {{action 'addToCart' instrument}}>Add to Cart</button>
 {{else}}
   {{new-feedback instrument=instrument saveFeedback="saveFeedback"}}
 <button class='btn' {{action 'addToCart' instrument}}>Add to Cart</button>

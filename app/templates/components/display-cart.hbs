@@ -1,3 +1,4 @@
+{{#if cartIsShowing}}
 <div class="row shopping-cart">
   <div class='col s2'>
   {{#each shoppingCart.instruments as |instrument|}}
@@ -9,3 +10,6 @@
   <h4>Your total: ${{totalPrice}}</h4>
   </div>
 </div>
+{{else}}
+<a class='btn' {{action 'showCart'}}><i class="material-icons">shopping_cart</i></a>
+{{/if}}

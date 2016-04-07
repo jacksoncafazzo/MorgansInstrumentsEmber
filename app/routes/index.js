@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  cartIsShowing: false,
   model() {
     return Ember.RSVP.hash({
       instruments: this.store.findAll('instrument'),
       feedbacks: this.store.findAll('feedback')
     });
   },
-  cartIsShowing: false,
   actions: {
     saveInstrument(params) {
       var newInstrument = this.store.createRecord('instrument', params);
@@ -40,10 +40,9 @@ export default Ember.Route.extend({
       feedback.destroyRecord();
       this.transitionTo('index');
     },
-
-      showCart() {
-        this.set('cartIsShowing', true);
-      }
+    showCart() {
+      this.set('cartIsShowing', true);
+    }
 
   }
 });

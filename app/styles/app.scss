@@ -13,8 +13,9 @@
 
 .new-instrument {
   display: flex;
-  justify-content: center;
-  padding-top: 10px;
+ justify-content: flex-end;
+ padding-top: 10px;
+ flex-flow: column;
 }
 
 .shopping-cart {

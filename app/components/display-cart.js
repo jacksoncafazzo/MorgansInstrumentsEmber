@@ -8,5 +8,11 @@ export default Ember.Component.extend({
         total += this.get('shoppingCart.instruments')[i].get('price');
     }
       return total;
-    })
+    }),
+    cartIsShowing: false,
+    actions: {
+      showCart() {
+        this.set('cartIsShowing', true);
+      }
+    }
   });

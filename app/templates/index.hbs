@@ -1,15 +1,16 @@
-{{#if cartIsShowing}}
-{{display-cart}}
-{{else}}
-<a class='btn' {{action 'showCart'}}><i class="material-icons">shopping_cart</i></a>
-{{/if}}
+<div class="row">
+  <div class="col sm8">
+    <div class="instruments">
+      {{#each model.instruments as |instrument|}}
+      {{instrument-tile instrument=instrument destroyInstrument='destroyInstrument' update='update' saveFeedback="saveFeedback" deleteFeedback='deleteFeedback' session=session}}
+      {{/each}}
+    </div>
+  </div>
 
-<div class="instruments">
-  {{#each model.instruments as |instrument|}}
-  {{instrument-tile instrument=instrument destroyInstrument='destroyInstrument' update='update' saveFeedback="saveFeedback" deleteFeedback='deleteFeedback' session=session}}
-  {{/each}}
-</div>
-
-<div class="new-instrument">
-  {{new-instrument saveInstrument='saveInstrument'}}
+  <div class="col sm4">
+    <div class="new-instrument">
+      {{display-cart}}
+      {{new-instrument saveInstrument='saveInstrument'}}
+    </div>
+  </div>
 </div>
